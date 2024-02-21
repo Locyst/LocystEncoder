@@ -11,25 +11,6 @@ class LocystEncoder:
     falseSpace = '​'  # Do not add anything here as there is already something here
 
     @classmethod
-    def reverse(cls, string):
-        """
-        Returns a reversed string
-
-        Parameters:
-        - string (string): The string that will be reversed
-
-        Returns:
-        string: A reversed string of the parameter, string.
-        """
-        returnString = ''
-
-        for word in string:
-            for character in word:
-                returnString = character + returnString
-
-        return returnString
-
-    @classmethod
     def generateSeed(cls, securityLevel=10):
         """
         Creates a seed used for encoding
@@ -112,7 +93,8 @@ class LocystEncoder:
                     encoded.append(cls.falseSpace)
             i += 1
 
-        return cls.reverse(''.join(encoded)), seed
+        return string = ''.join(encoded)
+        return string[::-1}, seed
 
     @classmethod
     def decode(cls, string, seed):
@@ -128,7 +110,7 @@ class LocystEncoder:
         """
         if seed is None:
             print("Cannot run without a seed")
-        string = cls.reverse(string)
+        string = string[::-1]
         listString = string.split(cls.falseSpace)
         decoded = []
         capitals = []
