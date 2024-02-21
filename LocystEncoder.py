@@ -93,8 +93,8 @@ class LocystEncoder:
                     encoded.append(cls.falseSpace)
             i += 1
 
-        return string = ''.join(encoded)
-        return string[::-1}, seed
+        returnString = ''.join(encoded)
+        return returnString[::-1], seed
 
     @classmethod
     def decode(cls, string, seed):
@@ -143,12 +143,13 @@ class LocystEncoder:
 
         return ''.join(decoded)
 
+# ---------------------------------------------------------------#
 
-seed = Encoder.generateSeed(50)
+seed = LocystEncoder.generateSeed(50)
 string = "Hello World!"
 
-encoded = Encoder.encode(string, seed)
-decoded = Encoder.decode(encoded[0], encoded[1])
+encoded = LocystEncoder.encode(string, seed)
+decoded = LocystEncoder.decode(encoded[0], encoded[1])
 
 print(seed)
 print(encoded[0])
