@@ -1,10 +1,10 @@
 from LocystEncoder.LocystEncoder import LocystEncoder
 
-seed = Encoder.generateSeed(50)
+seed = LocystEncoder.generateSeed(50)
 string = "Hello World!"
- 
-encoded = Encoder.encode(string, seed)
-decoded = Encoder.decode(encoded[0], encoded[1])
+
+encoded = LocystEncoder.encode(string, seed)
+decoded = LocystEncoder.decode(encoded[0], encoded[1])
 
 print(seed)
 print(encoded[0])
